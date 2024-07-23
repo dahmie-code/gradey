@@ -63,7 +63,6 @@ body.page-404 {
    }
   }
 }
-
 .planet-container {
   width: 200px;
   height: 200px;
@@ -81,6 +80,7 @@ body.page-404 {
   animation: planet-moving 2s ease infinite;
   transition: all 0.2s ease;
   left: 42%;
+
   .shine {
     width: 2px;
     height: 0px;
@@ -94,6 +94,7 @@ body.page-404 {
     transform: rotate(-45deg);
     top: 53px;
     left: 38px;
+
     &::after {
       content: "";
       position: absolute;
@@ -111,6 +112,7 @@ body.page-404 {
       top: -16px;
     }
   }
+
   .shine-2 {
     position: absolute;
     width: 10px;
@@ -121,17 +123,12 @@ body.page-404 {
     left: 45.5px;
     -webkit-transform: rotate(-55deg);
     transform: rotate(-55deg);
+
     &::after {
+      content: "";
       position: absolute;
-      width: 10px;
-      height: 20px;
       background: transparent;
       border-radius: 50%;
-      top: 68px;
-      left: 45.5px;
-      -webkit-transform: rotate(-55deg);
-      transform: rotate(-55deg);
-      content: "";
       top: 9px;
       left: 43.5px;
       -webkit-transform: rotate(206deg);
@@ -139,6 +136,7 @@ body.page-404 {
       width: 12px;
       height: 10px;
     }
+
     &::before {
       content: "";
       position: absolute;
@@ -152,18 +150,95 @@ body.page-404 {
       transform: rotate(40deg);
     }
   }
+}
+
   h1 {
+    .planet-container {
+      .shine-3 {
+        &::after {
+          position: absolute;
+          width: 12px;
+          height: 10px; 
+          top: 9px;  
+          left: 43.5px;
+          -webkit-transform: rotate(206deg); 
+          transform: rotate(206deg); 
+          content: "";
+          background: transparent;
+          border-radius: 50%;
+        }
+      }
+      .shine-4 {
+        &::after {
+          position: absolute;
+          width: 12px;
+          height: 10px;
+          top: 9px;
+          left: 43.5px;
+          -webkit-transform: rotate(206deg);  
+          transform: rotate(206deg); 
+          content: "";
+          background: transparent;
+          border-radius: 50%;
+        }
+      }
+    }
+  
+    -webkit-animation: planet-moving 3s ease infinite;
+    animation: planet-moving 3s ease infinite;
+    transition: all 0.2s ease;
+    padding-bottom: 100px;
+    padding-right: 60px;
+    width: 120px;
+    height: 100px;
+    font-family: "Varela Round", sans-serif;
+    font-size: 16vw;
+    text-align: center;
+    line-height: 0.85;
+    margin-top: 7.6%;
+    left: 31%;
+    -webkit-transform: translate(-55%, -55%);
+    transform: translate(-55%, -55%);
+    position: absolute;
+    color: #6e81e3;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000, 1px 0px 0px #730f8e, 0px 1px 0px #730f8e,
+      2px 1px 0px #730f8e, 1px 2px 0px #730f8e, 3px 2px 0px #730f8e,
+      2px 3px 0px #730f8e, 4px 3px 0px #730f8e, 3px 4px 0px #730f8e,
+      5px 4px 0px #730f8e, 3px 5px 0px #000, 6px 5px 0px #000, -1px 2px 0 #000,
+      0 3px 0 #000, 1px 4px 0 #000, 2px 5px 0px #000, 2px -1px 0 #000,
+      3px 0 0 #000, 4px 1px 0 #000, 5px 2px 0px #000, 6px 3px 0 #000,
+      7px 4px 0 #000, 5px 5px 20px #f9026d;
+    &:after {
+      content: "";
+      position: absolute;
+      overflow: hidden;
+      left: -33px;
+      width: 101%;
+      top: 39px;
+      z-index: 5;
+      -webkit-transform: rotate(-52deg);
+      transform: rotate(-52deg);
+      background-image: linear-gradient(
+        190deg,
+        #f9026d,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0)
+      );
+      border-radius: 155px;
+      height: 33%;
+    }
     .shine-3 {
+      position: absolute;
+      width: 10px;
+      height: 20px;
+      background: transparent;
+      border-radius: 50%;
+      top: 70px;
+      left: 45.5px;
+      -webkit-transform: rotate(-73deg);
+      transform: rotate(-73deg);
       &::after {
-        position: absolute;
-        width: 10px;
-        height: 20px;
-        background: transparent;
-        border-radius: 50%;
-        top: 68px;
-        left: 45.5px;
-        -webkit-transform: rotate(-55deg);
-        transform: rotate(-55deg);
         content: "";
         top: 9px;
         left: 43.5px;
@@ -171,19 +246,31 @@ body.page-404 {
         transform: rotate(206deg);
         width: 12px;
         height: 10px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 9px;
+        width: 11px;
+        background-color: #bdc5f2;
+        border-radius: 200px;
+        top: 24px;
+        left: 60px;
+        -webkit-transform: rotate(24deg);
+        transform: rotate(24deg);
       }
     }
     .shine-4 {
+      position: absolute;
+      width: 20px;
+      height: 65px;
+      background: transparent;
+      border-radius: 50%;
+      top: 75px;
+      left: 45.5px;
+      -webkit-transform: rotate(-73deg);
+      transform: rotate(-73deg);
       &::after {
-        position: absolute;
-        width: 10px;
-        height: 20px;
-        background: transparent;
-        border-radius: 50%;
-        top: 68px;
-        left: 45.5px;
-        -webkit-transform: rotate(-55deg);
-        transform: rotate(-55deg);
         content: "";
         top: 9px;
         left: 43.5px;
@@ -192,8 +279,20 @@ body.page-404 {
         width: 12px;
         height: 10px;
       }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 9px;
+        width: 26px;
+        background-color: #bdc5f2;
+        border-radius: 200px;
+        top: 24px;
+        left: 60px;
+        -webkit-transform: rotate(23deg);
+        transform: rotate(23deg);
+      }
     }
-  }
+  }  
   .planet-ring {
     width: 300px;
     height: 40px;
@@ -231,7 +330,7 @@ body.page-404 {
     background: linear-gradient(150deg, #f9026d, #730f8e, rgba(0, 0, 0, 0));
     border-radius: 100px;
   }
-}
+
 h1 {
   .planet-container {
     .shine-3 {
