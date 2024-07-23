@@ -20,7 +20,19 @@ if (!userId) { // User is not logged in, redirect them to the login page
   localStorage.clear();
 }
 
-const gradeItemsData = await getGradeItemsData();
+// const gradeItemsData = await getGradeItemsData();
+
+
+async function fetchGradeItemsData() {
+  try {
+      const gradeItemsData = await getGradeItemsData();
+      console.log(gradeItemsData); 
+  } catch (error) {
+      console.error('Error fetching grade items data:', error);
+  }
+}
+
+// fetchGradeItemsData();
 
 function initializeSearch() {
   const subheaderComponent = document.querySelector('subheader-component');
@@ -30,7 +42,7 @@ function initializeSearch() {
 
 function handleSearch(searchItem) {
   const filter = searchItem.toUpperCase();
-  const sortedGradeItems = sortGradeItemsData(gradeItemsData);
+  const sortedGradeItems = sortGradeItemsData(fetchGradeItemsData);
   const filteredGradeItems = sortedGradeItems.filter((gradeItemKey) => (gradeItemKey['Asmt Title'].toUpperCase().indexOf(filter) > -1 || gradeItemKey['Asmt Category'].toUpperCase().indexOf(filter)) > -1 ? gradeItemKey : null);
   if (filteredGradeItems.length > 0) {
     const tableElementItem = createTable(filteredGradeItems);
@@ -353,7 +365,7 @@ async function initializePage() {
   initializeHeader();
   createGradeItem();
   try {
-    initializePageWithData(gradeItemsData);
+    initializePageWithData(fetchGradeItemsData);
   } catch (error) {
     console.error('Error while initializing the page:', error);
   } finally {

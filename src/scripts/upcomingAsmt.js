@@ -88,7 +88,18 @@ const modalComponent = document.querySelector('modal-component');
 const subheaderComponent = document.querySelector('subheader-component');
 const openModalButton = subheaderComponent.shadowRoot.querySelector('.assignments');
 
-const userData = await getCoursesFor(userId);
+// const userData = await getCoursesFor(userId);
+
+async function userData() {
+  try {
+      const user = await getCoursesFor(userId);
+      console.log(user); 
+  } catch (error) {
+      console.error('Error fetching grade items data:', error);
+  }
+}
+
+// fetchGradeItemsData();
 const assessments = getAllUpcomingAssessments(userData);
 
 const createModalData = async () => {
