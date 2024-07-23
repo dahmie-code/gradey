@@ -3,14 +3,14 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyB071Z3Mt0x04gzrF9HrGzQhySvUpPT4Wk',
-  authDomain: 'wit-gradey-web.firebaseapp.com',
-  databaseURL: 'https://wit-gradey-web-default-rtdb.firebaseio.com',
-  projectId: 'wit-gradey-web',
-  storageBucket: 'wit-gradey-web.appspot.com',
-  messagingSenderId: '332956740852',
-  appId: '1:332956740852:web:b6629420fdb289ea64c2a1',
-  measurementId: 'G-214P1JSLDF',
+  apiKey: "AIzaSyDqysohgLq1StvsQCVGLEsiTtg-HMBidjg",
+  authDomain: "gradey-webapp.firebaseapp.com",
+  databaseURL: "https://gradey-webapp-default-rtdb.firebaseio.com",
+  projectId: "gradey-webapp",
+  storageBucket: "gradey-webapp.appspot.com",
+  messagingSenderId: "479464668344",
+  appId: "1:479464668344:web:9816e36382dc222c0bc84d",
+  measurementId: "G-7RRSRQL016"
 };
 
 // Initialize Firebase
