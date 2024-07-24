@@ -1,4 +1,5 @@
-import { showSpinner, hideSpinner } from "./loaderPage.js";
+import { showSpinner, hideSpinner } from './loaderPage.js';
+
 showSpinner();
 
 const links = document.querySelectorAll('.menu-item');
