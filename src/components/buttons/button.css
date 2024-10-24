@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@200;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@300;400;500;600;700&display=swap");
+.button {
+  padding: 12px 30px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 12px;
+  background: transparent;
+  font: 400 16px/24px "Lexend", sans-serif;
+  cursor: pointer;
+}
+
+.button--blue {
+  border-color: #0279fe;
+  background: #0279fe;
+  color: #fff;
+  transition: all 0.3s;
+}
+.button--blue:hover {
+  border-color: #024B9E;
+  background: #024B9E;
+  transition: all 0.3s;
+}
+
+.button--white {
+  border-color: #fff;
+  color: #fff;
+  transition: all 0.3s;
+}
+.button--white:hover {
+  border-color: #566176;
+  color: #566176;
+  background: #fff;
+  transition: all 0.3s;
+}
+
+.button--gray {
+  border-color: #566176;
+  color: #566176;
+}
+
+.button--gray-full {
+  background: #566176;
+}
+
+@media screen and (max-width: 767px) {
+  [mobile-icon=icon] {
+    position: relative;
+    font-size: 0;
+    padding: 0;
+    background: url("../../img/svg/calendar_blue.svg") center no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border: 1px solid #0279fe;
+    z-index: 0;
+  }
+  [mobile-icon=icon]:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../../img/svg/calendar_white.svg") center no-repeat;
+    content: "";
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 23px;
+    opacity: 0;
+  }
+  [mobile-icon=icon]:hover {
+    transition: all 0.3s;
+    box-shadow: inset 1rem 1rem 1.25rem 2rem #024B9E;
+  }
+  [mobile-icon=icon]:hover:after {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=button.css.map */

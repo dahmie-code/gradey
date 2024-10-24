@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@200;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@300;400;500;600;700&display=swap");
+:root {
+  --lightPink: rgb(250, 165, 200);
+  --pink: rgb(235, 62, 130);
+  --red: rgb(222, 33, 33);
+  --orange: rgb(245, 145, 45);
+  --yellow: rgb(255, 205, 5);
+  --lightYellow: rgb(255, 245, 160);
+  --lightPurple: rgb(200, 160, 250);
+  --purple: rgb(140, 0, 240);
+  --darkPurple: rgb(75, 0, 125);
+  --darkBlue: rgb(0, 0, 100);
+  --blue: rgb(15, 75, 255);
+  --lightBlue: rgb(55, 140, 250);
+  --lightGreen: rgb(90, 225, 155);
+  --green: rgb(20, 220, 20);
+  --darkGreen: rgb(10, 100, 10);
+  --darkGray: rgb(114, 114, 114);
+}
+
+.container {
+  max-width: 1280px;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.container--fluid {
+  margin: 0;
+  max-width: 100%;
+}
+.container--custom {
+  padding: 0;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+main {
+  flex: 6;
+  min-height: 75vh;
+}
+@media screen and (min-width: 768px) {
+  main {
+    max-width: calc(100% - 5rem);
+  }
+}
+
+main.page-auth {
+  max-width: 100%;
+}
+
+sidebar-component {
+  display: none;
+  background: #024B9E;
+  transition: width cubic-bezier(0, 0, 0.2, 1) 0.15s 0s;
+  position: fixed;
+  height: 100%;
+  width: 80px;
+  z-index: 9;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  sidebar-component {
+    display: block;
+  }
+  sidebar-component:hover {
+    width: 18.75rem;
+    transition: width cubic-bezier(0, 0, 0.2, 1) 0.2s 0.1s;
+  }
+}
+@media screen and (max-width: 767px) {
+  sidebar-component {
+    width: 100%;
+  }
+}
+sidebar-component.is-active {
+  display: block;
+  height: 100vh;
+}
+
+.site-main {
+  margin: 20px;
+}
+@media screen and (min-width: 768px) {
+  .site-main {
+    margin: 40px;
+  }
+}
+.site-main--centred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input:focus, input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-small {
+    display: none;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.flex-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.subheader {
+  padding: 16px 0;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 0;
+  border: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 0.625rem 1.25rem 0 rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 768px) {
+  .subheader {
+    margin: 0 40px;
+  }
+}
+.subheader .container {
+  flex-direction: row;
+  width: auto;
+}
+.subheader.is-active {
+  background: #024B9E;
+  transition: all 0.3s;
+}
+
+search-component {
+  min-width: 30%;
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  search-component {
+    display: block;
+  }
+}
+
+button-component, search-component {
+  flex: 1;
+}
+
+button-component[action=openAddCourseModal],
+button-component[action=addItem] {
+  display: flex;
+  justify-content: flex-end;
+}/*# sourceMappingURL=subheader.css.map */

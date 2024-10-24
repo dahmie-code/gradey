@@ -1,0 +1,356 @@
+:root {
+  --lightPink: rgb(250, 165, 200);
+  --pink: rgb(235, 62, 130);
+  --red: rgb(222, 33, 33);
+  --orange: rgb(245, 145, 45);
+  --yellow: rgb(255, 205, 5);
+  --lightYellow: rgb(255, 245, 160);
+  --lightPurple: rgb(200, 160, 250);
+  --purple: rgb(140, 0, 240);
+  --darkPurple: rgb(75, 0, 125);
+  --darkBlue: rgb(0, 0, 100);
+  --blue: rgb(15, 75, 255);
+  --lightBlue: rgb(55, 140, 250);
+  --lightGreen: rgb(90, 225, 155);
+  --green: rgb(20, 220, 20);
+  --darkGreen: rgb(10, 100, 10);
+  --darkGray: rgb(114, 114, 114);
+}
+
+.container {
+  max-width: 1280px;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.container--fluid {
+  margin: 0;
+  max-width: 100%;
+}
+.container--custom {
+  padding: 0;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+main {
+  flex: 6;
+  min-height: 75vh;
+}
+@media screen and (min-width: 768px) {
+  main {
+    max-width: calc(100% - 5rem);
+  }
+}
+
+main.page-auth {
+  max-width: 100%;
+}
+
+sidebar-component {
+  display: none;
+  background: #024B9E;
+  transition: width cubic-bezier(0, 0, 0.2, 1) 0.15s 0s;
+  position: fixed;
+  height: 100%;
+  width: 80px;
+  z-index: 9;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  sidebar-component {
+    display: block;
+  }
+  sidebar-component:hover {
+    width: 18.75rem;
+    transition: width cubic-bezier(0, 0, 0.2, 1) 0.2s 0.1s;
+  }
+}
+@media screen and (max-width: 767px) {
+  sidebar-component {
+    width: 100%;
+  }
+}
+sidebar-component.is-active {
+  display: block;
+  height: 100vh;
+}
+
+.site-main {
+  margin: 20px;
+}
+@media screen and (min-width: 768px) {
+  .site-main {
+    margin: 40px;
+  }
+}
+.site-main--centred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input:focus, input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-small {
+    display: none;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.flex-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+.modal__content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+  max-height: 530px;
+  max-height: 90vh;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  color: #566176;
+  min-width: 300px;
+  font-family: Lexend, sans-serif;
+  text-wrap: balance;
+  z-index: 10;
+}
+@media screen and (min-width: 768px) {
+  .modal__content {
+    min-width: 500px;
+  }
+}
+.modal__header {
+  background: #024B9E;
+  display: flex;
+  padding: 15px 20px;
+  border-radius: 8px 8px 0 0;
+}
+.modal__body {
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 18rem;
+}
+.modal__body .modal__confirm--message {
+  margin: 15px 0 20px;
+}
+.modal__body ul {
+  margin: -18px;
+  padding: 0;
+  list-style: none;
+}
+.modal__body li {
+  padding: 8px 20px;
+}
+.modal__body h3 {
+  margin: 0;
+}
+.modal__body p {
+  margin: 0.2rem 0;
+}
+.modal__title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  color: #fff;
+}
+.modal__text {
+  margin: 10px 0;
+}
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+.modal__close svg {
+  width: 40px;
+  height: 40px;
+}
+.modal__close svg:hover path {
+  stroke: #FA114F;
+}
+
+.assessment__date-select {
+  display: inline-block;
+  margin: 0 0 30px 0;
+  width: 100%;
+  height: 45px;
+  border-radius: 3px;
+  padding: 0 10px;
+  border: 1px solid #566176;
+  font: 400 1rem "Lexend", sans-serif;
+  color: #566176;
+  cursor: pointer;
+}
+.assessment__item {
+  box-shadow: 0 0.625rem 1.25rem 0 rgba(0, 0, 0, 0.3);
+  margin: 15px;
+  position: relative;
+}
+.assessment__item:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #eb3e82;
+  content: "";
+}
+.assessment__item.lightBlue:after {
+  background: var(--lightBlue);
+}
+.assessment__item.lightPink:after {
+  background: var(--lightPink);
+}
+.assessment__item.pink:after {
+  background: var(--pink);
+}
+.assessment__item.red:after {
+  background: var(--red);
+}
+.assessment__item.orange:after {
+  background: var(--orange);
+}
+.assessment__item.yellow:after {
+  background: var(--yellow);
+}
+.assessment__item.lightYellow:after {
+  background: var(--lightYellow);
+}
+.assessment__item.lightPurple:after {
+  background: var(--lightPurple);
+}
+.assessment__item.purple:after {
+  background: var(--purple);
+}
+.assessment__item.darkPurple:after {
+  background: var(--darkPurple);
+}
+.assessment__item.darkBlue:after {
+  background: var(--darkBlue);
+}
+.assessment__item.blue:after {
+  background: var(--blue);
+}
+.assessment__item.lightGreen:after {
+  background: var(--lightGreen);
+}
+.assessment__item.green:after {
+  background: var(--green);
+}
+.assessment__item.darkGreen:after {
+  background: var(--darkGreen);
+}
+.assessment__item.darkGray:after {
+  background: var(--darkGray);
+}
+.assessment__container .no-assessments {
+  margin: 30px 0;
+  text-align: center;
+}/*# sourceMappingURL=modal.css.map */

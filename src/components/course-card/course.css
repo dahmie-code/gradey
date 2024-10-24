@@ -1,0 +1,425 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@200;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@300;400;500;600;700&display=swap");
+:root {
+  --lightPink: rgb(250, 165, 200);
+  --pink: rgb(235, 62, 130);
+  --red: rgb(222, 33, 33);
+  --orange: rgb(245, 145, 45);
+  --yellow: rgb(255, 205, 5);
+  --lightYellow: rgb(255, 245, 160);
+  --lightPurple: rgb(200, 160, 250);
+  --purple: rgb(140, 0, 240);
+  --darkPurple: rgb(75, 0, 125);
+  --darkBlue: rgb(0, 0, 100);
+  --blue: rgb(15, 75, 255);
+  --lightBlue: rgb(55, 140, 250);
+  --lightGreen: rgb(90, 225, 155);
+  --green: rgb(20, 220, 20);
+  --darkGreen: rgb(10, 100, 10);
+  --darkGray: rgb(114, 114, 114);
+}
+
+.container {
+  max-width: 1280px;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.container--fluid {
+  margin: 0;
+  max-width: 100%;
+}
+.container--custom {
+  padding: 0;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+main {
+  flex: 6;
+  min-height: 75vh;
+}
+@media screen and (min-width: 768px) {
+  main {
+    max-width: calc(100% - 5rem);
+  }
+}
+
+main.page-auth {
+  max-width: 100%;
+}
+
+sidebar-component {
+  display: none;
+  background: #024B9E;
+  transition: width cubic-bezier(0, 0, 0.2, 1) 0.15s 0s;
+  position: fixed;
+  height: 100%;
+  width: 80px;
+  z-index: 9;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  sidebar-component {
+    display: block;
+  }
+  sidebar-component:hover {
+    width: 18.75rem;
+    transition: width cubic-bezier(0, 0, 0.2, 1) 0.2s 0.1s;
+  }
+}
+@media screen and (max-width: 767px) {
+  sidebar-component {
+    width: 100%;
+  }
+}
+sidebar-component.is-active {
+  display: block;
+  height: 100vh;
+}
+
+.site-main {
+  margin: 20px;
+}
+@media screen and (min-width: 768px) {
+  .site-main {
+    margin: 40px;
+  }
+}
+.site-main--centred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input:focus, input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-small {
+    display: none;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.flex-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.course__item {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  border-radius: 12px;
+}
+.course__item:before {
+  content: "→";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: var(--lightBlue);
+  border-radius: 0 12px 0 32px;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.course__item:hover {
+  transition: all 0.3s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  top: -4px;
+}
+.course__item:hover:before {
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+.course__item--left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  flex: 1;
+  background: #378cfa;
+  border-radius: 12px 12px 0 0;
+}
+.course__item--right {
+  flex: 2;
+  padding: 30px 15px;
+}
+.course__item--grade-title {
+  margin: 0 0 10px;
+  font: 400 18px "Lexend", sans-serif;
+  text-transform: uppercase;
+}
+.course__item--average {
+  margin: 0 0 10px;
+  font: 600 33px "Lexend", sans-serif;
+}
+.course__item--course-lable {
+  margin: 0 0 35px;
+  font: 600 18px "Lexend", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #353E50;
+  text-align: center;
+}
+.course__item--course-title {
+  font: 500 18px "Lexend", sans-serif;
+  color: #566176;
+}
+.course__item--summary {
+  padding: 0;
+  list-style: none;
+  font: 400 16px "Lexend", sans-serif;
+  color: #566176;
+}
+.course__item--summary li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.course__item--summary li:last-child {
+  min-height: 40px;
+}
+.course__item--summary li {
+  display: flex;
+  align-items: flex-start;
+}
+.course__item--details-img {
+  margin-right: 5px;
+  max-width: 20px;
+}
+.course__item .button {
+  display: flex;
+  align-items: center;
+  font: 400 18px "Lexend", sans-serif;
+  border: none;
+  background: transparent;
+  padding: 0 0 5px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+.course__item .button:hover {
+  transition: all 0.3s;
+}
+.course__item .button svg {
+  margin-right: 5px;
+}
+.course__item--btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.course__item--btn-delete {
+  color: #FA114F;
+}
+.course__item--btn-delete:hover {
+  border-color: #FA114F;
+}
+.course__item--btn-edit {
+  color: #3C3CD0;
+}
+.course__item--btn-edit:hover {
+  border-color: #3C3CD0;
+}
+@media screen and (min-width: 700px) {
+  .course__item {
+    flex-direction: row;
+    max-width: 100%;
+  }
+  .course__item--left {
+    border-radius: 12px 0 0 12px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .course__item {
+    max-width: 100%;
+  }
+}
+
+.progress__bar {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  border-radius: 5px;
+  padding: 15px;
+}
+.progress__bar--progress-line {
+  background-color: rgba(225, 225, 225, 0.65);
+  border-radius: 12px;
+  margin-bottom: 15px;
+  height: 5px;
+}
+.progress__bar--progress-achieved {
+  background-color: rgb(255, 0, 0);
+  width: 30%;
+  height: 100%;
+  border-radius: 5px;
+}
+.progress__bar--progress-title {
+  margin: 5px 0;
+}
+
+.course__item[course-color=lightBlue]:before {
+  background: var(--lightBlue);
+}
+
+.course__item[course-color=lightPink]:before {
+  background: var(--lightPink);
+}
+
+.course__item[course-color=pink]:before {
+  background: var(--pink);
+}
+
+.course__item[course-color=red]:before {
+  background: var(--red);
+}
+
+.course__item[course-color=orange]:before {
+  background: var(--orange);
+}
+
+.course__item[course-color=yellow]:before {
+  background: var(--yellow);
+}
+
+.course__item[course-color=lightYellow]:before {
+  background: var(--lightYellow);
+}
+
+.course__item[course-color=lightPurple]:before {
+  background: var(--lightPurple);
+}
+
+.course__item[course-color=purple]:before {
+  background: var(--purple);
+}
+
+.course__item[course-color=darkPurple]:before {
+  background: var(--darkPurple);
+}
+
+.course__item[course-color=darkBlue]:before {
+  background: var(--darkBlue);
+}
+
+.course__item[course-color=blue]:before {
+  background: var(--blue);
+}
+
+.course__item[course-color=lightGreen]:before {
+  background: var(--lightGreen);
+}
+
+.course__item[course-color=green]:before {
+  background: var(--green);
+}
+
+.course__item[course-color=darkGreen]:before {
+  background: var(--darkGreen);
+}
+
+.course__item[course-color=darkGray]:before {
+  background: var(--darkGray);
+}/*# sourceMappingURL=course.css.map */
